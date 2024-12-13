@@ -1,0 +1,46 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telemetry Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="renderer.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <h1 style="text-align: center;">Telemetry Dashboard</h1>
+  
+  <div id="data" style="text-align: center;">
+    <p><strong>Temperature:</strong> <span id="temperature">-</span> °C</p>
+    <p><strong>Altitude:</strong> <span id="altitude">-</span> m</p>
+    <p><strong>Horizontal Velocity:</strong> <span id="v_horizontal">-</span> m/s</p>
+    <p><strong>HDOP:</strong> <span id="hdop">-</span></p>
+  </div>
+
+  <!-- Container for the Temperature Thermometer and Altitude Progress Bar -->
+  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px;">
+    <!-- Container for the Temperature Thermometer -->
+    <div id="temperature-thermometer" style="width:300px; height:600px; border: 1px solid #ddd;"></div>
+
+    <!-- Container for the Altitude Progress Bar -->
+    <div id="altitude-progress-container" style="width:300px; height:600px; border: 1px solid #ddd; position: relative;">
+      <div id="altitude-progress-bar" style="width:100%; height:0%; background-color:green; position:absolute; bottom:0;"></div>
+      <p id="altitude-display" style="position:absolute; top:0; width:100%; text-align:center; color:#fff;">0 m</p>
+    </div>
+
+    <div id="rocket-container" style="width:300px; height:600px; border: 1px solid #ddd; margin: 0 auto;"></div>
+  </div>
+  
+  
+  
+
+
+  <!-- Control Buttons -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="toggle-stream">Stop Streaming</button>
+    <button id="close-app">Close App</button>
+  </div>
+</body>
+</html>
